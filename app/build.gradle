@@ -1,19 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+
+    namespace "com.eightbitlab.blurview_sample"
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.eightbitlab.blurview_sample"
         minSdkVersion 19
-        targetSdkVersion 31
+        targetSdk 35
         versionCode 3
         versionName "1.1"
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 
     buildTypes {

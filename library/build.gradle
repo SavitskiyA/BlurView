@@ -2,16 +2,17 @@ apply plugin: 'com.android.library'
 apply plugin: 'de.mannodermaus.android-junit5'
 
 android {
-    compileSdkVersion 31
+    namespace "com.eightbitlab.blurview"
+    compileSdk 35
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 
     defaultConfig {
         minSdkVersion 18
-        targetSdkVersion 31
+        targetSdk 35
     }
 }
 
@@ -35,12 +36,11 @@ task androidJavadocs(type: Javadoc) {
     classpath += files(ext.androidJar)
 }
 
-task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
-    classifier = 'javadoc'
-    from androidJavadocs.destinationDir
+task androidJavadocsJar(type: Jar) {
+    archiveClassifier.set("javadoc")
 }
 
 task androidSourcesJar(type: Jar) {
-    classifier = 'sources'
+    archiveClassifier.set('sources')
     from android.sourceSets.main.java.srcDirs
 }

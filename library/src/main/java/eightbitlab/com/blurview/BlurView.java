@@ -15,6 +15,8 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
+import com.eightbitlab.blurview.R;
+
 /**
  * FrameLayout that blurs its underlying content.
  * Can have children and draw them over blurred background.
